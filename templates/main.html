@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Заказы банкетов</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/banquet.css' %}">
+    </head>
+    <body>
+        <div class="top_container">
+        <div class="left">Заказы банкетов ГритБанкет</div>
+        <div class="right"><a href="create">Собрать свой банкет</a></div>
+        <div class="right"><a href="person">Личный кабинет</a></div>
+            <div class="right"><a href="invite">Приглашения</a></div>
+        </div>
+    <div>
+        <table border="1" cellpadding="5" align="center">
+            <tr>
+                <td><img src="{% static 'img/baikeri.jpg' %}" class="image" ></td>
+            <td><img src="{% static 'img/svadba.jpg' %}" class="image"></td>
+            </tr>
+                            <td><img src="{% static 'img/ritual.jpeg' %}" class="image" ></td>
+                <td><img src="{% static 'img/baikeri.jpg' %}" class="image" ></td>
+        </table>
+
+    </div>
+        <footer class="footer"><a href="http://127.0.0.1:8000/banquet/comment">Оставить отзыв</a></footer>
+        <table style="margin-left: 30%; font-size: 20px; color: white; padding: 10px">
+    {% for comment in comments %}
+    <tr>
+        <td>{{ comment.title }}</td>
+        <td>{{ comment.text }}</td>
+        <td>{{ comment.user }}</td>
+
+    </tr>
+{% endfor %}
+        </table>
+    </body>
+</html>

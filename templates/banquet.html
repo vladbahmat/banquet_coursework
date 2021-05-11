@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/banquet.css' %}">
+</head>
+<body>
+ <div class="top_container">
+        <div class="left">Заказы банкетов ГритБанкет</div>
+        <div class="right"><a href="http://127.0.0.1:8000/banquet/main">На главную</a></div>
+ </div>
+<table border="1" width="100%" cellpadding="5">
+<form method="POST">
+{% csrf_token %}
+{% for banquet in banquets %}
+    <tr>
+        <th>{{ banquet.music }}</th>
+        <th>{{ banquet.people }}</th>
+        <th>{{ banquet.money }}</th>
+        <th>{{ banquet.date }}</th>
+        <th>
+
+            <input type="radio" name="answer" value={{ banquet.id}}>
+
+      </th>
+    </tr>
+{% endfor %}
+<input type="submit" value="Отменить" class="button" style="margin-left: 92%; margin-top: 20%">
+  </form>
+
+</table>
+<a href="http://127.0.0.1:8000/banquet/person">Назад к профилю</a>
+</body>
+</html>

@@ -1,0 +1,1 @@
+default_app_config = 'banquet.apps.BanquetsConfig'

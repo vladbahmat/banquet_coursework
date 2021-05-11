@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/banquet.css' %}">
+</head>
+<body>
+ <div class="top_container">
+        <div class="left">Заказы банкетов ГритБанкет</div>
+        <div class="right"><a href="http://127.0.0.1:8000/banquet/main">На главную</a></div>
+ </div>
+<table border="1" width="100%" cellpadding="5" style="margin-top: 10%; background-color: navajowhite;">
+<th><p>Имя: {{ person.name }}</p></th>
+<th><p>Фамилия: {{ person.surname }}</p></th>
+<th><p>Баланс: {{ person.balance }}</p></th>
+
+</table>
+<div>
+<a style="color:blue; font-size: 20px;" href="http://127.0.0.1:8000/banquet/person/edit ">Редактировать личную информацию</a>
+</div>
+<div>
+<a style="color:blue; font-size: 20px;" href="http://127.0.0.1:8000/banquet/person/add_balance">Пополнить баланс</a>
+</div>
+<div>
+<a style="color:blue; font-size: 20px;" href="http://127.0.0.1:8000/banquet/person/banquets">Ваши банкеты</a>
+</div>
+<a style="color:blue; font-size: 20px;" href="http://127.0.0.1:8000/banquet/main">На главную</a>
+</body>
+</html>
